@@ -9,10 +9,11 @@ The proposed logit regularization methods in ["Adversarial Logit Pairing"](https
 ![](images/loss_surfaces.png)
 
 
-The PGD attack with the default settings is not necessarily a strong attack. Testing different attack hyperparameters is crucial when evaluating the robustness of a model.
+We highlight that a proper evaluation of the adv. robustness is still an unresolved task.
+The PGD attack with the default settings is not necessarily a strong attack. Testing different attack hyperparameters (the number of iterations, stepsize) is crucial when evaluating the robustness of a new defense.
 ![](images/heatmaps.png)
 
-Performing many random restarts is crucial when an attack deteriorates the loss surface.
+Performing many random restarts is very important when an attack deteriorates the loss surface. Below is an example of the loss values achieved by the PGD attack on different test points (a CLP model, MNIST). Using only 1 random restart (a standard practice) may be not sufficient to find an adversarial example.
 ![](images/histograms.png)
 The vertical red line denotes the loss value −ln(0.1), which guarantees that for this and a higher value of the loss
 we find an adversarial example.
